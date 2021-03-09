@@ -47,8 +47,11 @@
             {{ mars.facts | safe }}
           </div>
         </div>
+        {% for each_img in mars.hemispheres %}
+        <img src='{{each_img.img_url}}'/>'
+        <p>{{each_img.title}}</p>
+        {% endfor %}
       </div>
     </div>
   </body>
 </html>
-IMPORT

@@ -10,7 +10,7 @@ def scrape_all():
    # browser = Browser("chrome", executable_path="chromedriver", headless=True)
     # Windows users
     executable_path = {'executable_path':'C:\\Users\\16084\\.wdm\\drivers\\chromedriver\\win32\\88.0.4324.96\\chromedriver.exe'}
-    browser = Browser('chrome', **executable_path, headless=True)
+    browser = Browser('chrome', **executable_path, headless=False)
 
     news_title, news_paragraph = mars_news(browser)
 
@@ -22,7 +22,6 @@ def scrape_all():
         "facts": mars_facts(),
         "hemispheres": hemispheres(browser),
         "last_modified": dt.datetime.now()
-        
     }
     # Stop webdriver and return data
     browser.quit()
